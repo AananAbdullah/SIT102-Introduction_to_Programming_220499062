@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Fits the website's content onto any device's viewing area without any zooming-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Form</title>
+    <script src="main.js"></script><!--Linked an external JavaScript file that contains the required functions-->
+    <style>
+        /*Internal CSS to change background color,headings*/
+        body{
+            background-color:rgb(183, 214, 255);
+        }
+        h1{
+            color:#7A1212;
+            text-align:center;
+        }
+        /*Internal CSS to style the input boxes*/
+        input[type=text], select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 5px 0px 0px 200px;
+            display: inline-block;
+            border: 1px inset #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        /*Internal CSS to style the submit button*/
+        button {
+            width: 70%;
+            background-color: #EECCEE;
+            color:#7A1212;
+            padding: 14px 20px;
+            margin: 8px 0px 0px 200px;
+            border: 2px outset;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:#f19b90;
+        }
+        /*Internal CSS to style the labels*/
+        label[for]{
+            font-size:25px;
+            font-family:Arial, Helvetica, sans-serif;
+            color:#6d1c1c;
+            margin:10px 0px 0px 210px;
+        }
+        /*Making the page responsive by using media queries*/
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            input[type=text],
+            button {
+                width:90%;
+                padding:5px 10px;
+                margin:10px 0px 0px 10px;
+            }
+        }
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            label[for]{
+                margin:10px 0px 0px 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Fill up the form to receive monthly updates.</h1>
+    <!----The form tag helps create forms that receive user input-->
+        <form>
+        <label for="fname">First Name:</label><br><!--The label tag is for displaying the text above the input boxes-->
+        <input type="text" id="fname" name="fname"><br><!--The input label is for displaying the blank input boxes-->
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age"><br>
+        <label for="email">Email Address:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <!--The button tag displays the Submit button and I have called a JavaScript function to generate an alert box-->
+        <button onclick="Reminder()">Submit</button>
+        </form>
+</body>
+</html>
