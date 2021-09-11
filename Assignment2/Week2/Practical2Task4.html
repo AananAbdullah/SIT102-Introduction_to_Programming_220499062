@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Elements</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        /*Internal CSS for the body,header,paragraph,and bold text*/
+        body{
+            background-color:rgb(16, 124, 34);
+        }
+        h1{
+            color:#cff1dc;
+            text-align:justify;
+        }
+        p{
+            font-size:20px;
+            color:#201c1c;
+        }
+        b{
+            font-size:40px;
+            color:#201c1c;
+            text-align:center;
+        }
+        /*Displayed the entire page as a grid*/
+        .wrapper{
+            display:grid;
+            height:722px;
+            grid-template-columns:1fr 1fr 1fr;
+            column-gap:20px;
+            row-gap:14px;
+        }
+        /*styled the content of any div tags inside the class wrapper*/
+        .wrapper>div{
+            background-color:#df7091;
+        }
+        /*Customizing the header's style*/
+        .header{
+            grid-column:1/4;
+            height:90px;
+            font-size:500%;
+            font-family:"Oregano",serif;
+            font-style:oblique;
+            color:#cff1dc;
+            border-style:ridge;
+            border-color:#d5e6d9;
+            border-width:1px;
+            text-align:center;
+        }
+        /*Styling the search bar*/
+        .header input[type=text]{
+            float:right;
+            padding:12px;
+            margin-top:27px;
+            margin-right:35px;
+            border-style:inset;
+            border-color:#81dfa5;
+            border-width:5px;
+            font-size:25.75%;
+        }
+        /*All the styling for the navigation bar*/
+        .menu{
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+            background-color:rgb(164, 240, 177);
+        }
+        .menu a{
+            display:block;
+            color:#0f0f0f;
+            text-align:center;
+            padding:10px 5px 5px 5px;
+            text-decoration:none;
+            font-size:20px;
+            font-style:normal;
+            text-shadow:1px 1px 1px #888585
+
+        }
+        /*Changes color when the cursor hovers over any section of the navigation bar*/
+        .menu a:hover{
+            background-color:#df7091;
+            color:#ecd9e2;
+        }
+        /*Formatted the other 3 parts of the grid besides the header and menu*/
+        .main{
+            grid-column:1/3;
+            grid-row:2/4;
+        }
+        .right{
+            grid-column:3/4;
+            grid-row:2/4;
+            height:400px;
+        }
+        /*Making the page responsive for different devices using media queries*/
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            div.header{
+                height:90px;
+                font-size:200%;
+            }
+        }
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            div.header input[type=text]{
+                padding:5px;
+            }
+        }
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            div.wrapper{
+                display:unset;
+            }
+        }
+        @media only screen and (min-width:300px) and (max-width:1300px){
+            div.menu a,
+            div.menu button{
+                font-size:11px;
+                padding:8px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            Attractions in Bangladesh
+            <input type="text" placeholder="Search...">
+        <div class="menu">
+            <!---All the hyperlinks to the website's other pages listed in the navigation bar.At
+            the moment,they are not fully designed only serve as place holders.-->
+            <a href="#">Cultural Tours</a>
+            <a href="#">History Musuems</a>
+            <a href="#">Art Galleries</a>
+            <a href="#">Waterfalls</a>
+            <a href="#">National Parks</a>
+            <a href="#">Water and Amusement Parks</a>
+        </div>
+        </div>
+        <div class="main">
+            <h1>Greetings!</h1>
+            <p>Bangladesh is a land of enormous beauty, hundreds of serpentine rivers, crystal clear 
+                water lakes surrounded by ever green hills, luxuriant tropical rain forests, beautiful 
+                cascades of green tea gardens, world's largest mangrove forest preserved as World 
+                Heritage,and home of the Royal Bengal Tiger.You can undertake a variety of adventerous
+                activities during your stay at Bangladesh.The country's population is almost evenly distributed 
+                throughout its 64 districts except for the three Hill Tracts districts which are rather sparsely 
+                inhabited. On average, a district has a population of about 1.8 million, a thana 230,000, a 
+                union 25,000 and a village 2,000. There are 4 metropolitan cities and 119 municipalities in the 
+                country.The capital city of Dhaka has an estimated population of 8.58 million.Bangladesh has a natural beauty 
+                all over the country, Rivers are the most important geographical features in Bangladesh and also 
+                brings the natural attractiveness to it. Bangladesh has a plenty of places to enjoy and recreation,
+                Cox's Bazar (120 kilometers) World Longest Natural Sea Beach is one of them. Cox's Bazar is the 
+                tourist capital of Bangladesh. Miles of golden sands, towering cliffs, surfing waves, rare conch 
+                shells, colorful pagodas, Buddhist temples and tribes, delightful sea-food--this is Cox's Bazar.
+                The navigation bar lists some of the most popular tourist activities.Each of the pages contains an activity description,required
+                supplies,financial information,and numerous pictures to provide depict what the activity
+                truly looks like.If you have any further questions,please feel free to reach out to me via
+                email or call me on my phone number.I hope you have a lovely time in Bangladesh!
+            </p>
+               <p><b style="font-size:20px">Contact Us:</b>Email:abdullahaa@deakin.edu.au or
+               Phone:+8801736644104</p>
+        </div>   
+        <div class="right">
+            <iframe width="560" height="330" src="https://www.youtube.com/embed/MljARGytuNo" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="230" src="https://source.unsplash.com/WLUHO9A_xik/1600x900"></iframe>
+
+        </div>
+        </div>
+    </div>
+    <script src="list.js"></script>
+</body>
+</html>
