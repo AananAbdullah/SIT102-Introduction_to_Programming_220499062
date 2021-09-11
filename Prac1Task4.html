@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 4</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <section id='app'>
+        <h1>{{title}}</h1>
+        <div v-for="todoItem in todoLists">
+            <input style="font-size:30px" type="checkbox"
+            v-on:change="toggleItem(todoItem)"
+            v-bind:checked="todoItem.checked">
+        </input>
+        <del v-if="todoItem.checked">
+            {{todoItem.text}}
+        </del>
+        <span v-else>
+            {{todoItem.text}}
+        </span>
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>
