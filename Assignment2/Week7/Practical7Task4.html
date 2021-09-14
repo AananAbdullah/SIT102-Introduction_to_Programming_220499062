@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Vue Slots</title>
+<script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="app">
+   <section class="hero is-fullheight is-warning is-bold">
+     <div class="hero-body">
+       <div class="container">
+         <p class="title is-1">{{ title }}</p>
+         <p class="subtitle is-3">{{ subtitle }}</p>
+         <!-- Renders "Hello from the parent!" -->
+        <child-component>
+          <p slot="bottom">Let's move this into the bottom slot</p>
+          <p>Hello from the parent!</p>
+          <p slot="top">Let's move this into the top slot</p>
+        </child-component>
+        <!-- Renders "Hello from the child!" -->
+        <child-component></child-component>
+       </div>
+     </div>
+  </section>
+</div>
+
+<script type="text/x-template" id="child-component">
+  <div>
+    <!-- Elements injected with the `slot="top"`
+    attribute will end up in here. -->
+    <slot name="top">
+    </slot>
+    <!-- A slot tag without a name is a catch-all,
+    it will contain any content that doesn't have
+    a `slot=""` attribute. -->
+    <slot>
+      <p>Hello from the child!</p>
+    </slot>
+    <!-- Elements injected with the `slot="bottom"`
+    attribute will end up in here. -->
+    <slot name="bottom">
+    </slot>
+  </div>
+  Vue.component('child-component', {
+  template: '#child-component',
+  data() {
+      return {
+        childTitle: 'title from child component',
+        childSubtitle: 'subtitle from child component'
+      }
+  },
+  props:{
+    subtitle: {
+      type: String,
+      required: true
+    }
+  }
+})
+
+new Vue ({
+  el: '#app',
+  data() {
+      return {
+        title: 'Hello Vue',
+        subtitle: 'how to use slots'
+    }
+  }
+})
+</script>
+</body>
+</html>
