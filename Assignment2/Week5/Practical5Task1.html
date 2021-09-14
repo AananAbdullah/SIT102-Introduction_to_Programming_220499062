@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        ol{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Grocery List</h1>
+    <div id ="app">
+        <ol>
+            <list-item v-for="item in groceryList" v-bind:list="item"></list-item>
+        </ol>
+    </div>
+    <script src="task1.js"></script>
+</body>
+
+</html>

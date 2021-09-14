@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Handling User Input</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        p{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <div id="app-2">
+        <p>{{ text }}</p>
+        <input v-model="text" placeholder="Name">
+        <p>{{ age }}</p>
+        <input v-model="age" placeholder="Age">
+        <p>{{ university }}</p>
+        <input v-model="university" placeholder="University">
+        <p><button>Submit</button></p>
+
+      </div>
+    <script src="task3.js"></script>
+</body>
+</html>
+  

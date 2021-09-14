@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        ol,p{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Self Care Activities</h1>
+    <div id ="app">
+        <ol>
+            <list-item v-for="item in activityList" v-bind:list="item"></list-item>
+        </ol>
+        <p><button v-on:click="count++">Activity Counter</button> {{count}}</p><!--Increases each time
+        the button is clicked-->
+    </div>
+
+    <script src="task2.js"></script>
+</body>
+
+</html>
