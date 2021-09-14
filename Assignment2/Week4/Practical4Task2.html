@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conditionals and Loops</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id ="num" >
+        <h2>A 2nd Trimester Unit</h2>
+        <span v-if="type === 'SIT120'">Intro to Responsive Web Apps</span>
+        <span v-else-if="type === 'SIT102'">Introduction to Programming</span>
+        <span v-else-if="type === 'SIT103'">Data and Information Management</span>
+        <span v-else>Business Requirements Analysis</span>
+        <h1 v-show="ok">How are you?</h1>
+        <button @click="ok = !ok">Toggle</button>
+      </div>
+      <div id="app">
+          <h1>{{list}}</h1>
+          <input v-model="newItem" type="text" placeholder="Add an item">
+          <button @click="saveItem">Save Item</button>
+          <ul>
+              <li v-for="Item in Items">{{Item}}</li>
+          </ul>
+      </div>
+      <script src="task2.js"></script>
+</body>
+</html>
